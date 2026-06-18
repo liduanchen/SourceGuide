@@ -199,42 +199,17 @@ sourceguide generate . --route quick --offline --output demo/sourceguide --overw
 
 ## 🧠 How It Works
 
-SourceGuide follows a "rule-based scan first, staged generation second, strict validation last" workflow. It does not send the whole repository to the model at once. Instead, it compresses the project into trustworthy structured clues before generating learning paths for different readers.
+SourceGuide operates in three stages: rule-based scanning first, staged generation second, strict validation last — without dumping the entire repository into the model at once.
 
 ```mermaid
-flowchart TD
-    A["Input<br/>GitHub URL / Local Path"] --> B["Prepare Source<br/>clone or read local directory"]
-
-    subgraph S1["Rule Analysis Layer"]
-        C["Scan File Tree<br/>filter irrelevant files"]
-        D["Detect Project Clues<br/>README / deps / config / entry / tests"]
-        E["Identify Tech Stack<br/>Python / Node / Go / Rust / Java / Docker"]
-        F["Infer Run Method<br/>install / run / test / lint"]
-        G["Rank Core Files<br/>Top 10 + reading order"]
-    end
-
-    subgraph S2["Generation & Validation Layer"]
-        H["Build Analysis Context<br/>only real scan results"]
-        I["Staged AI Generation<br/>four learning paths"]
-        J["Quality Validation<br/>run guide / real file refs / uncertainty labels"]
-    end
-
-    subgraph S3["Markdown Output"]
-        K["docs/sourceguide/<br/>paths / run guide / source map / architecture / glossary / exercises"]
-    end
-
-    B --> C --> D --> E --> F --> G --> H --> I --> J --> K
+flowchart LR
+    A["📦 GitHub URL / Local Path"] -->
+    B["🔍 Rule Scan<br>Files · Tech Stack · Run Method · Core Files"] -->
+    C["🤖 Staged AI Gen<br>4 Learning Paths + Supporting Docs"] -->
+    D["✅ Validate & Write<br>Check run instructions · Write to docs/sourceguide/"]
 ```
 
-| Stage | What happens | Output |
-| --- | --- | --- |
-| **Prepare Source** | Accept a local path or public GitHub URL, then clone when needed | Scannable project directory |
-| **Rule Analysis** | Scan files, identify stack, infer runtime, rank core files | Structured project context |
-| **Staged Generation** | Generate four learning paths and supporting docs from real scan results | Markdown draft |
-| **Quality Validation** | Check run guidance, real file references, and uncertainty labels | Publishable docs |
-| **Write Output** | Write results into `docs/sourceguide/` | GitHub-friendly doc bundle |
-
-> Key principle: every referenced source file must come from real scan results. Unknown facts should be labeled as uncertain instead of being written as confident hallucinations.
+> **Design principle:** All referenced files come from real scan results. Uncertain information must be labeled as "uncertain" — no empty talk.
 
 ## 🧱 Project Structure
 
@@ -273,40 +248,14 @@ Test coverage includes:
 
 ## 🗺️ Roadmap
 
-SourceGuide will first make the CLI and Markdown generation solid, then expand into automation, collaboration, and doc-site workflows.
-
-```mermaid
-timeline
-    title SourceGuide Roadmap
-    v0.1 MVP : CLI
-             : Public GitHub repositories
-             : Local directories
-             : Chinese Markdown output
-    v0.2 Configurable : sourceguide.toml
-                      : Custom scan rules
-                      : Custom templates
-    v0.3 Incremental Updates : Regenerate changed docs only
-                             : Preserve manual edits
-                             : Scan-result cache
-    v0.4 Automation : GitHub Action
-                    : Auto-generate on repo updates
-                    : CI artifact checks
-    v0.5 More Scenarios : Multi-language output
-                         : Private repo support
-                         : HTML doc site
-    v1.0 Stable Release : Stable CLI / API
-                         : Plugin analyzers
-                         : Polished examples and release docs
-```
-
-| Stage | Status | Focus | Notes |
-| :--- | :---: | :--- | :--- |
-| **v0.1 MVP** | ✅ Done | CLI + public repos + local dirs + Chinese Markdown output | Make the core generation chain usable and trustworthy |
-| **v0.2 Configurable** | 🔜 Next | `sourceguide.toml` + custom scan rules + custom templates | Adapt to different project structures and writing styles |
-| **v0.3 Incremental Updates** | 🔜 Planned | Regenerate changed sections while preserving manual edits | Make SourceGuide useful for long-term docs maintenance |
-| **v0.4 Automation** | 🔜 Planned | GitHub Action + CI doc checks | Refresh learning paths automatically when repositories change |
-| **v0.5 More Scenarios** | 🔜 Planned | Multi-language output + private repos + HTML docs | Expand from personal CLI use to teams, courses, and doc sites |
-| **v1.0 Stable Release** | 🔮 Goal | Stable CLI/API + plugin analyzers + complete examples | Lock down public interfaces and support community analyzers |
+| Version | Status | Focus |
+| :--- | :---: | :--- |
+| **v0.1 MVP** | ✅ | CLI + public repos + local dirs + Chinese Markdown |
+| **v0.2** | 🔜 | `sourceguide.toml` · custom scan rules · custom templates |
+| **v0.3** | 🔜 | Incremental updates · preserve manual edits |
+| **v0.4** | 🔜 | GitHub Action · auto-generate on repo updates |
+| **v0.5** | 🔜 | Multi-language · private repos · HTML doc site |
+| **v1.0** | 🔮 | Stable API · plugin analyzers
 
 ## 🤝 Contributing
 
