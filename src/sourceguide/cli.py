@@ -6,12 +6,18 @@ from typing import Annotated
 import typer
 from rich.console import Console
 
+from .ai import RuleBasedAIClient
 from .config import load_config
 from .models import GenerateOptions
 from .pipeline import generate
 
 app = typer.Typer(help="Turn any GitHub repository into guided source-code learning paths.")
 console = Console()
+
+
+@app.callback()
+def root() -> None:
+    """Turn any GitHub repository into guided source-code learning paths."""
 
 
 @app.command("generate")
@@ -26,6 +32,7 @@ def generate_cmd(
     overwrite: Annotated[bool, typer.Option("--overwrite", help="Overwrite existing generated files.")] = False,
     architecture: Annotated[bool, typer.Option("--architecture/--no-architecture", help="Generate architecture.md.")] = True,
     glossary: Annotated[bool, typer.Option("--glossary/--no-glossary", help="Generate glossary.md.")] = True,
+    offline: Annotated[bool, typer.Option("--offline", help="Generate rule-based demo docs without calling an AI API.")] = False,
 ) -> None:
     config = load_config()
     if route not in {"all", "beginner", "quick", "contributor", "interview"}:
@@ -49,7 +56,8 @@ def generate_cmd(
         debug=config.debug,
     )
     console.print(f"[bold]SourceGuide[/bold] scanning {target}")
-    written = generate(options, api_key=config.api_key)
+    ai_client = RuleBasedAIClient() if offline else None
+    written = generate(options, api_key=config.api_key, ai_client=ai_client)
     console.print("[green]Generated SourceGuide documents:[/green]")
     for path in written:
         console.print(f"- {Path(path)}")
@@ -57,3 +65,7 @@ def generate_cmd(
 
 def main() -> None:
     app()
+
+
+if __name__ == "__main__":
+    main()

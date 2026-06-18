@@ -34,6 +34,10 @@
   <a href="#roadmap">Roadmap</a>
 </p>
 
+<br>
+
+[✨ Try Online](https://codespaces.new/liduanchen/SourceGuide) &nbsp;|&nbsp; [📖 View Examples](examples/README.md) &nbsp;|&nbsp; [🤝 Contributing](CONTRIBUTING_EN.md)
+
 </div>
 
 ---
@@ -61,6 +65,17 @@ SourceGuide is an open-source CLI tool for developers. Give it a **GitHub reposi
 
 - Python 3.9+
 - An OpenAI-compatible API key
+
+### Try Online
+
+Click [✨ Try Online](https://codespaces.new/liduanchen/SourceGuide) to open a GitHub Codespaces development environment. Once it is ready, run:
+
+```bash
+sourceguide --help
+sourceguide generate . --route quick --offline --output demo/sourceguide --overwrite
+```
+
+`--offline` uses the rule-based generator for a no-key demo. Real AI generation still requires `OPENAI_API_KEY`.
 
 ### Installation
 
@@ -149,6 +164,7 @@ sourceguide generate <repo-or-path> [options]
 | `--language` | `zh-CN` | Output language |
 | `--depth` | `normal` | Depth: `basic` / `normal` / `deep` |
 | `--overwrite` | `false` | Overwrite existing output |
+| `--offline` | `false` | Use the rule-based generator without calling an AI API |
 
 > CLI flags take precedence over environment variables.
 
@@ -163,6 +179,9 @@ sourceguide generate . --output docs/sourceguide --overwrite
 
 # Override model and API URL
 sourceguide generate . --model gpt-4.1 --base-url https://api.example.com/v1
+
+# Try generation without an API key
+sourceguide generate . --route quick --offline --output demo/sourceguide --overwrite
 ```
 
 ## ⚙️ Configuration
