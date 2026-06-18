@@ -12,11 +12,14 @@
   <a href="https://github.com/liduanchen/SourceGuide/actions">
     <img src="https://img.shields.io/github/actions/workflow/status/liduanchen/SourceGuide/ci.yml?branch=master&style=flat-square" alt="CI Status">
   </a>
-  <a href="https://pypi.org/project/sourceguide/">
-    <img src="https://img.shields.io/pypi/v/sourceguide?style=flat-square" alt="PyPI">
+  <a href="https://github.com/liduanchen/SourceGuide/commits/master">
+    <img src="https://img.shields.io/github/last-commit/liduanchen/SourceGuide?style=flat-square" alt="Last Commit">
   </a>
-  <a href="https://pypi.org/project/sourceguide/">
-    <img src="https://img.shields.io/pypi/pyversions/sourceguide?style=flat-square" alt="Python Versions">
+  <a href="https://github.com/liduanchen/SourceGuide">
+    <img src="https://img.shields.io/github/languages/code-size/liduanchen/SourceGuide?style=flat-square" alt="Code Size">
+  </a>
+  <a href="https://github.com/liduanchen/SourceGuide">
+    <img src="https://img.shields.io/github/languages/top/liduanchen/SourceGuide?style=flat-square" alt="Top Language">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/github/license/liduanchen/SourceGuide?style=flat-square" alt="License">
