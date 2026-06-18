@@ -6,11 +6,12 @@ labels: enhancement
 assignees: ""
 ---
 
-## Problem
+<!-- 🇨🇳 中文 | 🇬🇧 English -->
 
-## Proposed solution
+## 🎯 问题 / Problem
 
-## Alternatives considered
+## 💡 解决方案 / Proposed solution
 
-## Additional context
+## 🔄 替代方案 / Alternatives considered
 
+## 📎 补充信息 / Additional context

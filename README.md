@@ -1,5 +1,9 @@
 <div align="center">
 
+[🇨🇳 中文](README.md) | [🇬🇧 English](README_EN.md)
+
+---
+
 # 📖 SourceGuide
 
 **把任意 GitHub 仓库变成源码学习路线**

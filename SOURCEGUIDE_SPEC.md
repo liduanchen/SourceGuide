@@ -1,3 +1,7 @@
+[🇨🇳 中文](SOURCEGUIDE_SPEC.md) | [🇬🇧 English](SOURCEGUIDE_SPEC_EN.md)
+
+---
+
 # SourceGuide 产品与架构文档
 
 ## 1. 项目定位

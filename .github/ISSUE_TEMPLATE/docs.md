@@ -6,9 +6,10 @@ labels: documentation
 assignees: ""
 ---
 
-## Page or file
+<!-- 🇨🇳 中文 | 🇬🇧 English -->
 
-## What should change?
+## 📄 页面或文件 / Page or file
 
-## Why?
+## ✏️ 需要修改什么？/ What should change?
 
+## 🤔 原因 / Why?

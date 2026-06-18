@@ -6,21 +6,22 @@ labels: bug
 assignees: ""
 ---
 
-## What happened?
+<!-- 🇨🇳 中文 | 🇬🇧 English -->
 
-## Command
+## 🐛 发生了什么？/ What happened?
+
+## 💻 命令 / Command
 
 ```bash
 sourceguide generate ...
 ```
 
-## Expected behavior
+## ✅ 预期行为 / Expected behavior
 
-## Environment
+## 🌐 环境 / Environment
 
 - OS:
 - Python:
-- SourceGuide version:
+- SourceGuide 版本 / SourceGuide version:
 
-## Additional context
-
+## 📎 补充信息 / Additional context

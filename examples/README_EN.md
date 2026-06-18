@@ -14,4 +14,3 @@ sourceguide generate https://github.com/vitejs/vite --route quick --output examp
 ```
 
 Do not commit API keys or local `.env` files.
-

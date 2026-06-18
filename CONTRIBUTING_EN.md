@@ -31,8 +31,7 @@ source .venv/bin/activate
 
 ## Issue Types
 
-- Bug: incorrect scan, generation, CLI behavior, or validation.
-- Feature: new framework detection, output format, provider, or workflow.
-- Docs: README, examples, generated document clarity.
-- Question: usage, configuration, or roadmap discussion.
-
+- **Bug**: incorrect scan, generation, CLI behavior, or validation.
+- **Feature**: new framework detection, output format, provider, or workflow.
+- **Docs**: README, examples, generated document clarity.
+- **Question**: usage, configuration, or roadmap discussion.
